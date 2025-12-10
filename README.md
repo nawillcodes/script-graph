@@ -8,9 +8,9 @@
 
 ![MIT License](https://img.shields.io/badge/license-MIT-green)
 ![Godot](https://img.shields.io/badge/godot-4.x-blue)
-![GitHub Stars](https://img.shields.io/github/stars/nawillcodes/scriptgraph?style=social)
+![GitHub Stars](https://img.shields.io/github/stars/nawillcodes/script-graph?style=social)
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/nawillcodes?style=social)
-![GitHub Downloads](https://img.shields.io/github/downloads/nawillcodes/scriptgraph/total)
+![GitHub Downloads](https://img.shields.io/github/downloads/nawillcodes/script-graph/total)
 
 [💖 Sponsor](https://github.com/sponsors/nawillcodes) • [Buy me a Coffee ☕](https://ko-fi.com/naimwilliams)
 
