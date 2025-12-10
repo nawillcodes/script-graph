@@ -6,7 +6,13 @@
 
 **Visual Flow Analysis for GDScript in Godot 4**
 
-![Version](https://img.shields.io/badge/version-0.1.0--MVP-blue) ![Godot](https://img.shields.io/badge/Godot-4.0%2B-478CBF) ![License](https://img.shields.io/badge/license-MIT-green)
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+![Godot](https://img.shields.io/badge/godot-4.x-blue)
+![GitHub Stars](https://img.shields.io/github/stars/nawillcodes/scriptgraph?style=social)
+![GitHub Sponsors](https://img.shields.io/github/sponsors/nawillcodes?style=social)
+![GitHub Downloads](https://img.shields.io/github/downloads/nawillcodes/scriptgraph/total)
+
+[💖 Sponsor](https://github.com/sponsors/nawillcodes) • [Buy me a Coffee ☕](https://ko-fi.com/naimwilliams)
 
 </div>
 
@@ -25,6 +31,27 @@ ScriptGraph is a **read-only visual debugger** for GDScript that transforms your
 - ❌ A visual scripting language
 - ❌ A code editor or generator
 - ❌ A replacement for the Script tab
+
+---
+
+## 📸 See It In Action
+
+<div align="center">
+<img src="docs/assets/screenshot.png" alt="ScriptGraph showing function flow visualization with cross-references and code quality warnings" width="100%"/>
+
+*Visual flow graph showing function relationships, cross-reference analysis, and code quality warnings*
+</div>
+
+---
+
+## ❤️ Support This Open-Source Project
+
+This project is a labor of love. If it helps you or your team, please consider supporting development:
+
+👉 **[GitHub Sponsors](https://github.com/sponsors/nawillcodes)** - Monthly or one-time support  
+👉 **[Ko-fi](https://ko-fi.com/naimwilliams)** - Buy me a coffee ☕
+
+Your support helps maintain and improve ScriptGraph for the entire Godot community!
 
 ---
 

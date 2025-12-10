@@ -24,6 +24,9 @@ func _process(delta):
     # If health is depleted, handle player death
     if health <= 0:
         die()
+    
+    # Check for bonus rewards
+    check_bonus()
 
 # Resets player position and health upon death
 func die():

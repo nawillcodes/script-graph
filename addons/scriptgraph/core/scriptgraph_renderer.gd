@@ -52,13 +52,14 @@ func render(p_model: ScriptGraphModel, p_graph: GraphEdit, p_warnings: Array = [
 
 
 func _clear_graph() -> void:
-	# Remove all existing nodes
+	# Clear connections first
+	graph_edit.clear_connections()
+	
+	# Remove all existing nodes IMMEDIATELY to avoid name conflicts
 	for child in graph_edit.get_children():
 		if child is GraphNode:
+			graph_edit.remove_child(child)
 			child.queue_free()
-	
-	# Clear connections
-	graph_edit.clear_connections()
 
 
 ## LEGACY: Full detail view - shows every IF/ELSE/RETURN as a separate node
@@ -98,9 +99,7 @@ func _render_functions_only() -> void:
 func _create_function_graph_node(func_node: ScriptGraphModel.FlowNode) -> void:
 	var graph_node := GraphNode.new()
 	# CRITICAL: Set name BEFORE adding to tree
-	# Godot may auto-assign names if the node is in the tree
 	graph_node.name = func_node.id
-	print("    [CREATE] Setting GraphNode.name to: '%s'" % func_node.id)
 	
 	var icon := _get_node_icon(ScriptGraphModel.FlowNodeType.FUNC)
 	# Extract function name with parameters: "func name(params)" -> "name(params)"
@@ -131,14 +130,7 @@ func _create_function_graph_node(func_node: ScriptGraphModel.FlowNode) -> void:
 	graph_node.draggable = true
 	graph_node.resizable = false
 	
-	# DEBUG: Check name before adding
-	print("    [CREATE] GraphNode.name before add_child: '%s'" % graph_node.name)
-	
 	graph_edit.add_child(graph_node)
-	
-	# DEBUG: Check name after adding
-	print("    [CREATE] GraphNode.name after add_child: '%s'" % graph_node.name)
-	print("    [CREATE] Expected ID: '%s'" % func_node.id)
 
 
 ## ============================================================================

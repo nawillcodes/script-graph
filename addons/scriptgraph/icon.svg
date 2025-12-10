@@ -1,14 +1,6 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<!-- ScriptGraph Tab Icon - 16x16 optimized for Godot editor -->
-<!-- Dark theme friendly colors -->
-
-<!-- Accent dot (Godot blue) -->
-<circle cx="11.1469" cy="8.14704" r="1.14692" fill="#478CBF"/>
-
-<!-- Code brackets -->
-<path d="M4.66443 2.40012L1 8.00012L4.66443 13.6001" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.3356 2.40012L15 8.00012L11.3356 13.6001" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-
-<!-- Center slash -->
-<path d="M8.87919 1.00012L7 15.0001" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="10.6469" cy="7.64698" r="1" fill="#478CBF" stroke="#478CBF" stroke-width="0.293849" stroke-linejoin="round"/>
+<path d="M4.16443 1.90006L0.5 7.50006L4.16443 13.1001" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.8356 1.90006L14.5 7.50006L10.8356 13.1001" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8.37919 0.500059L6.5 14.5001" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
