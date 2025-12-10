@@ -1,0 +1,44 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+/ios/
+*.uid
+*.import
+*.translation
+export_presets.cfg
+
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Backup files
+*_old.*
+*.bak
+*.backup
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Build artifacts
+builds/
+exports/
+dist/

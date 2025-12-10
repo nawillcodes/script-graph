@@ -1,0 +1,154 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2vmvr3h7vxxf"]
+
+[ext_resource type="Script" uid="uid://bx7gfd8colcxh" path="res://addons/scriptgraph/ui/scriptgraph_dock.gd" id="1_j65c3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vw8r4"]
+bg_color = Color(0.211765, 0.239216, 0.278431, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.278431, 0.470588, 0.74902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="ScriptGraphDock" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_j65c3")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offset = 200
+
+[node name="Sidebar" type="VBoxContainer" parent="HSplitContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+
+[node name="FileHistoryPanel" type="VBoxContainer" parent="HSplitContainer/Sidebar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HistoryLabel" type="Label" parent="HSplitContainer/Sidebar/FileHistoryPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "Recent Files"
+
+[node name="FileHistory" type="Tree" parent="HSplitContainer/Sidebar/FileHistoryPanel"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+hide_root = true
+
+[node name="FunctionPanel" type="VBoxContainer" parent="HSplitContainer/Sidebar"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FunctionLabel" type="Label" parent="HSplitContainer/Sidebar/FunctionPanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "Functions"
+
+[node name="FunctionFilter" type="LineEdit" parent="HSplitContainer/Sidebar/FunctionPanel"]
+layout_mode = 2
+placeholder_text = "Filter Methods"
+clear_button_enabled = true
+
+[node name="FunctionList" type="Tree" parent="HSplitContainer/Sidebar/FunctionPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+hide_root = true
+
+[node name="MainContent" type="VBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HeaderPanel" type="PanelContainer" parent="HSplitContainer/MainContent"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vw8r4")
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/MainContent/HeaderPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="HeaderBox" type="HBoxContainer" parent="HSplitContainer/MainContent/HeaderPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="FileLabel" type="Label" parent="HSplitContainer/MainContent/HeaderPanel/MarginContainer/HeaderBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+text = "Select a .gd file in FileSystem"
+
+[node name="ContentSplit" type="VSplitContainer" parent="HSplitContainer/MainContent"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GraphEdit" type="GraphEdit" parent="HSplitContainer/MainContent/ContentSplit"]
+layout_mode = 2
+size_flags_vertical = 3
+minimap_enabled = false
+show_zoom_label = true
+
+[node name="WarningPanel" type="PanelContainer" parent="HSplitContainer/MainContent/ContentSplit"]
+visible = false
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.15
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/MainContent/ContentSplit/WarningPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="WarningList" type="RichTextLabel" parent="HSplitContainer/MainContent/ContentSplit/WarningPanel/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]⚠️ Warnings:[/b]
+• Empty else block at line 15"
+fit_content = false
+scroll_active = true
+scroll_following = false
+
+[node name="LegendPanel" type="PanelContainer" parent="HSplitContainer/MainContent"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/MainContent/LegendPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="LegendLabel" type="RichTextLabel" parent="HSplitContainer/MainContent/LegendPanel/MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Legend:[/b]  ⚡Function   🔀If/Branch  ←Return   🔁Loop   →✓Complete Accomplished   ⚠TODO   🔴FIXME   ←Red=Issues  White=Flow"
+fit_content = true
+scroll_active = false
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
